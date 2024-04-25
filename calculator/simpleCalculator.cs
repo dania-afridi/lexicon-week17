@@ -2,7 +2,7 @@ using System;
 namespace Calculator
 {
     public class program{
-        static void Main(string[] args) { 
+        static void Main(string[] args) {
             bool exitCalculator = true;
             static void selectOption()
             {
@@ -13,13 +13,15 @@ namespace Calculator
                 Console.WriteLine("Press 3 for Multiplication");
                 Console.WriteLine("Press 4 for Division\n");
                 Console.WriteLine("Press 9 for Exit the calculator\n");
-                
+
             }
-            while(exitCalculator){
+            while (exitCalculator)
+            {
                 selectOption();
                 try
                 {
                     int option = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("\n");
                     if (option == 1)
                         add();
                     else if (option == 2)
@@ -36,7 +38,7 @@ namespace Calculator
                         Console.WriteLine("Please! Select from the given options.\n\n");
                     }
                 }
-                catch (Exception ex) { Console.WriteLine(ex.Message); }
+                catch (Exception ex) { Console.WriteLine("\n" + ex.Message); Console.WriteLine("Please! Enter number."); }
             }
 
             static void add()
@@ -45,8 +47,8 @@ namespace Calculator
                 double num1 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("\nEnter second number : ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
-                double sum = num1+num2;
-                Console.WriteLine("The sum is "+ sum);
+                double sum = num1 + num2;
+                Console.WriteLine("\n" + num1 + " + " + num2 + " = " + sum);
             }
 
             static void subtract()
@@ -56,7 +58,7 @@ namespace Calculator
                 Console.WriteLine("Enter second number : ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
                 double difference = num1 - num2;
-                Console.WriteLine("The difference is " + difference);
+                Console.WriteLine("\n" + num1 + " - " + num2 + " = " + difference);
             }
 
             static void multiply()
@@ -66,7 +68,7 @@ namespace Calculator
                 Console.WriteLine("Enter second number : ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
                 double result = num1 * num2;
-                Console.WriteLine("The result is " + result);
+                Console.WriteLine("\n" + num1 + " * " + num2 + " = " + result);
             }
 
             static void divide()
@@ -78,9 +80,10 @@ namespace Calculator
                     Console.WriteLine("Enter second number : ");
                     double divisor = Convert.ToDouble(Console.ReadLine());
                     double quotient = dividend / divisor;
-                    Console.WriteLine("The result is " + quotient);
+                    Console.WriteLine("\n" + dividend + " / " + divisor + " = " + quotient);
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     Console.WriteLine(e.Message);
                 }
             }
